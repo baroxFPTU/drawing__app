@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drawing App</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <p>Paint by holding down the mouse button and moving.</p>
+    <div class="btn-group">
+
+        <a class="btn btn-download" href="" download="my_painting.png">Download my painting</a>
+        <a class="btn btn-clear">Clear</a>
+    </div>
+    <div id="pentools" class="pentools">
+            <div id="drawing-colors" class="drawing-colors">
+                <div class="color-circle active" data-color="#e74c3c" onclick="selectColor(this)"></div>
+                <div class="color-circle" data-color="#2ecc71" onclick="selectColor(this)"></div>
+                <div class="color-circle" data-color="#3498db" onclick="selectColor(this)"></div>
+                <div class="color-circle" data-color="#9b59b6" onclick="selectColor(this)"></div>
+                <div class="color-circle" data-color="#333" onclick="selectColor(this)"></div>
+                <div class="color-circle" data-color="#ecf0f1" onclick="selectColor(this)"></div>
+                <input type="color" name="favcolor" id="favcolor" value="#ff0000" onchange="favColor(this)">
+            </div>
+            <div class="favContainer">
+                <label for="favcolor">Select your favourite color:</label>
+                <input type="color" name="favcolor" id="favcolor" value="#ff0000" onchange="favColor(this)">
+            </div>
+            <div class="pen-size">
+                <label for="pen-size">Pen size:</label>
+                <input type="range" name="pen-size" id="pen-size" value="10" step="5" min="5" max="40" onchange="penSizeChanged(this.value)">
+            </div>
+    </div>
+    <div class="board">
+        <canvas width="800px" height="500px"></canvas>
+    </div>
+    <script src="./script.js"></script>
+</body>
+</html>
